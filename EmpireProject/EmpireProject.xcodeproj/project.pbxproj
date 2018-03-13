@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		D3A9FBDE203F76210063CBA0 /* game.c in Sources */ = {isa = PBXBuildFile; fileRef = D3A9FBC4203F761F0063CBA0 /* game.c */; };
 		D3A9FBDF203F76210063CBA0 /* map.c in Sources */ = {isa = PBXBuildFile; fileRef = D3A9FBC5203F761F0063CBA0 /* map.c */; };
-		D3A9FBE0203F76210063CBA0 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = D3A9FBC7203F761F0063CBA0 /* Makefile */; };
 		D3A9FBE1203F76210063CBA0 /* edit.c in Sources */ = {isa = PBXBuildFile; fileRef = D3A9FBCA203F761F0063CBA0 /* edit.c */; };
 		D3A9FBE2203F76210063CBA0 /* empire.c in Sources */ = {isa = PBXBuildFile; fileRef = D3A9FBCB203F761F0063CBA0 /* empire.c */; };
 		D3A9FBE3203F76210063CBA0 /* data.c in Sources */ = {isa = PBXBuildFile; fileRef = D3A9FBCC203F761F0063CBA0 /* data.c */; };
@@ -200,7 +199,6 @@
 				D3A9FBE2203F76210063CBA0 /* empire.c in Sources */,
 				D3A9FBE8203F76210063CBA0 /* main.c in Sources */,
 				D3A9FBE7203F76210063CBA0 /* util.c in Sources */,
-				D3A9FBE0203F76210063CBA0 /* Makefile in Sources */,
 				D3A9FBDE203F76210063CBA0 /* game.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

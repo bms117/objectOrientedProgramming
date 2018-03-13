@@ -31,9 +31,7 @@ options:
 
 #define OPTFLAGS "w:s:d:S:f:"
 
-int main(argc, argv)
-int argc;
-char *argv[];
+int main(int argc, char **argv)
 {
     int c;
     extern char *optarg;
