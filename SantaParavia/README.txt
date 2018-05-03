@@ -7,4 +7,4 @@
 +Put (char *) before "Peppone" string literal, and it seems to run properly now
 +Runs, but receiving this warning:
 	clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is 		deprecated [-Wdeprecated]. Still compiles and runs
-
++Made a hello world .cpp file to put all the code into to try to cover the code into c++
