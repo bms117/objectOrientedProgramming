@@ -1,4 +1,6 @@
 #include <stdlib.h>
+#ifndef __PARAVIA_H_INCLUDED__
+#define __PARAVIA_H_INCLUDED__
 
 /* Declare an enum to emulate a Boolean. */
 enum TrueFalse {True, False};
@@ -63,3 +65,4 @@ void DrawMap(player *);
 void StatePurchases(player *, int, player []);
 void ShowStats(player [], int);
 void ImDead(player *);
+#endif

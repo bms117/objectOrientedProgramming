@@ -8,5 +8,5 @@
 +Runs, but receiving this warning:
 	clang: warning: treating 'c' input as 'c++' when in C++ mode, this behavior is 		deprecated [-Wdeprecated]. Still compiles and runs
 +Made a hello world .cpp file to put all the code into to try to cover the code into c++
-+Attempted to refractor code into main.cpp, paravia.h, paranoia.cpp but now running into multiple errors
++Attempted to refractor code into main.cpp, paravia.h, paranoia.cpp but now running into multiple errors, but keeping the original .c file for a reference
 
