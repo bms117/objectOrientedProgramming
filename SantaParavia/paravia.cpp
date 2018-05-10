@@ -16,6 +16,8 @@ char FemaleTitles[8][15] = {"Lady", "Baroness", "Countess", "Marquise",
     "Duchess", "Grand Duchess", "Princess",
     "* H.R.H. Queen"};
 
+
+
 int Random(int Hi)
 {
     float RanNum;
@@ -100,7 +102,7 @@ int AttackNeighbor(player *Me, player *Him)
            deadsoldiers);
     return(LandTaken);
 }
-void BuyCathedral(player *Me)
+void Buy::BuyCathedral(player *Me)
 {
     Me->Cathedral += 1;
     Me->Clergy += Random(6);
@@ -108,7 +110,7 @@ void BuyCathedral(player *Me)
     Me->PublicWorks += 1.0;
     return;
 }
-void BuyGrain(player *Me)
+void Buy::BuyGrain(player *Me)
 {
     char string[256];
     int HowMuch;
@@ -131,7 +133,7 @@ void BuyGrain(player *Me)
     Me->GrainReserve += HowMuch;
     return;
 }
-void BuyLand(player *Me)
+void Buy::BuyLand(player *Me)
 {
     char string[256];
     int HowMuch;
@@ -142,7 +144,7 @@ void BuyLand(player *Me)
     Me->Treasury -= (int)(((float)HowMuch * Me->LandPrice));
     return;
 }
-void BuyMarket(player *Me)
+void Buy::BuyMarket(player *Me)
 {
     Me->Marketplaces += 1;
     Me->Merchants += 5;
@@ -150,14 +152,14 @@ void BuyMarket(player *Me)
     Me->PublicWorks += 1.0;
     return;
 }
-void BuyMill(player *Me)
+void Buy::BuyMill(player *Me)
 {
     Me->Mills += 1;
     Me->Treasury -= 2000;
     Me->PublicWorks += 0.25;
     return;
 }
-void BuyPalace(player *Me)
+void Buy::BuyPalace(player *Me)
 {
     Me->Palace += 1;
     Me->Nobles += Random(2);
@@ -165,7 +167,7 @@ void BuyPalace(player *Me)
     Me->PublicWorks += 0.5;
     return;
 }
-void BuySoldiers(player *Me)
+void Buy::BuySoldiers(player *Me)
 {
     Me->Soldiers += 20;
     Me->Serfs -= 20;
@@ -621,6 +623,8 @@ void NewTurn(player *Me, int HowMany, player MyPlayers[6], player *Baron)
 }
 void BuySellGrain(player *Me)
 {
+    //object
+    Buy b;
     bool Finished;
     char string[256];
     Finished = False;
@@ -644,11 +648,11 @@ void BuySellGrain(player *Me)
         if(string[0] == 'q')
             Finished = True;
         if(string[0] == '1')
-            BuyGrain(Me);
+            b.BuyGrain(Me);
         if(string[0] == '2')
             SellGrain(Me);
         if(string[0] == '3')
-            BuyLand(Me);
+            b.BuyLand(Me);
         if(string[0] == '4')
             SellLand(Me);
     }
@@ -716,6 +720,7 @@ void DrawMap(player *Me)
 }
 void StatePurchases(player *Me, int HowMany, player MyPlayers[6])
 {
+    Buy b;
     char string[256];
     int val = 1;
     string[0] = '\0';
@@ -738,11 +743,11 @@ void StatePurchases(player *Me, int HowMany, player MyPlayers[6])
         val = (int)atoi(string);
         switch(val)
         {
-            case 1: BuyMarket(Me); break;
-            case 2: BuyMill(Me); break;
-            case 3: BuyPalace(Me); break;
-            case 4: BuyCathedral(Me); break;
-            case 5: BuySoldiers(Me); break;
+            case 1: b.BuyMarket(Me); break;
+            case 2: b.BuyMill(Me); break;
+            case 3: b.BuyPalace(Me); break;
+            case 4: b.BuyCathedral(Me); break;
+            case 5: b.BuySoldiers(Me); break;
             case 6: ShowStats(MyPlayers, HowMany);
         }
     }

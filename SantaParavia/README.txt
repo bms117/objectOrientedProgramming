@@ -38,7 +38,7 @@ Meaning, which this is a guess, that there are duplicate definitions
 +Got rid of one of the duplicates, player, by removing 'Player' after the struct declaration.
 +After moving the declaration of those three other 'symbols' to .cpp and adding it one more time to the main function, the entire code runs together now.
 +Tried to start putting items into classes, but started having a lot of trouble getting errors everywhere.
-
++Was able to start putting functions into classes to organize them. Put the buy functions into a 'Buy' class.
 
 
 
