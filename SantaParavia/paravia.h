@@ -1,10 +1,12 @@
 #include <stdlib.h>
+#include <vector>
+using namespace std;
 #ifndef __PARAVIA_H_INCLUDED__
 #define __PARAVIA_H_INCLUDED__
 
-/* Declare an enum to emulate a Boolean. */
+/* Declare an enum to emulate a bool. */
 enum TrueFalse {True, False};
-typedef enum TrueFalse boolean;
+//typedef enum TrueFalse bool;
 /* Declare our player definition. */
 struct Player
 {
@@ -17,10 +19,12 @@ struct Player
     int TransplantedSerfs, Treasury, WhichPlayer, Year, YearOfDeath;
     char City[15], Name[25], Title[15];
     float PublicWorks, LandPrice;
-    boolean InvadeMe, IsBankrupt, IsDead, IWon, MaleOrFemale, NewTitle;
+    bool InvadeMe, IsBankrupt, IsDead, IWon, MaleOrFemale, NewTitle;
 } Player;
 typedef struct Player player;
 /* Declare our list of cities. */
+//vector<string> CityList;
+
 char CityList[7][15] = {"Santa Paravia", "Fiumaccio", "Torricella", "Molinetto",
     "Fontanile", "Romanga", "Monterana"};
 /* Declare our male titles. */
@@ -33,7 +37,7 @@ char FemaleTitles[8][15] = {"Lady", "Baroness", "Countess", "Marquise",
 /* Our prototypes. */
 int main(void);
 int Random(int);
-void InitializePlayer(player*, int, int, int, char*, boolean);
+void InitializePlayer(player*, int, int, int, char*, bool);
 void AddRevenue(player *);
 int AttackNeighbor(player *, player *);
 void BuyCathedral(player *);
@@ -44,7 +48,7 @@ void BuyMill(player *);
 void BuyPalace(player *);
 void BuySoldiers(player *);
 int limit10(int, int);
-boolean CheckNewTitle(player *);
+bool CheckNewTitle(player *);
 void GenerateHarvest(player *);
 void GenerateIncome(player *);
 void ChangeTitle(player *);

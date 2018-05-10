@@ -5,6 +5,7 @@
 #include <curses.h>
 #include "paravia.h"
 
+
 int Random(int Hi)
 {
     float RanNum;
@@ -14,7 +15,7 @@ int Random(int Hi)
     return((int)RanNum);
 }
 void InitializePlayer(player *Me, int year, int city, int level, char *name,
-                      boolean MorF)
+                      bool MorF)
 {
     /* This is pretty straightforward. */
     Me->Cathedral = 0;
@@ -166,7 +167,7 @@ int limit10(int num, int denom)
     val = num / denom;
     return(val > 10 ? 10 : val);
 }
-boolean CheckNewTitle(player *Me)
+bool CheckNewTitle(player *Me)
 {
     int Total;
     /* Tally up our success so far . . . . */
@@ -321,7 +322,7 @@ int ReleaseGrain(player *Me)
     float x, z;
     char string[256];
     int HowMuch, Maximum, Minimum;
-    boolean IsOK;
+    bool IsOK;
     IsOK = False;
     Minimum = Me->GrainReserve / 5;
     Maximum = (Me->GrainReserve - Minimum);
@@ -546,7 +547,7 @@ void PrintInstructions(void)
 }
 void PlayGame(player MyPlayers[6], int NumOfPlayers)
 {
-    boolean AllDead, Winner;
+    bool AllDead, Winner;
     int i, WinningPlayer = 0;
     player Baron;
     AllDead = False;
@@ -610,7 +611,7 @@ void NewTurn(player *Me, int HowMany, player MyPlayers[6], player *Baron)
 }
 void BuySellGrain(player *Me)
 {
-    boolean Finished;
+    bool Finished;
     char string[256];
     Finished = False;
     while(Finished == False)
@@ -784,3 +785,4 @@ void ImDead(player *Me)
     fgets(string, 255, stdin);
     return;
 }
+

@@ -12,4 +12,30 @@
 +Made some include guards, but didn't get rid of the warnings and errors.
 +Tried maybe seeing if I could just change the .c file to a .cpp file to see what it would do
 +So, literally renaming the file into "test.cpp" and copying all the code straight into that .cpp file from the .c file gave no warnings or errors and ran correctly. 
++Getting error:
+	Brians-MacBook-Pro:SantaParavia brian$ g++ *.cpp -o a.out 
+	duplicate symbol _CityList in:
+    		/var/folders/sl/n4_h7mv151x183b28w8t3cmc0000gn/T/main-bff3a0.o
+   		/var/folders/sl/n4_h7mv151x183b28w8t3cmc0000gn/T/paravia-58cc46.o
+	duplicate symbol _FemaleTitles in:
+    		/var/folders/sl/n4_h7mv151x183b28w8t3cmc0000gn/T/main-bff3a0.o
+    		/var/folders/sl/n4_h7mv151x183b28w8t3cmc0000gn/T/paravia-58cc46.o
+	duplicate symbol _MaleTitles in:
+    		/var/folders/sl/n4_h7mv151x183b28w8t3cmc0000gn/T/main-bff3a0.o
+    		/var/folders/sl/n4_h7mv151x183b28w8t3cmc0000gn/T/paravia-58cc46.o
+	duplicate symbol _Player in:
+    		/var/folders/sl/n4_h7mv151x183b28w8t3cmc0000gn/T/main-bff3a0.o
+    		/var/folders/sl/n4_h7mv151x183b28w8t3cmc0000gn/T/paravia-58cc46.o
+	ld: 4 duplicate symbols for architecture x86_64
+
+Meaning, which this is a guess, that there are duplicate definitions 
+
++Error ./paravia.h:7:24: error: redeclaration of C++ built-in type 'bool'
+		typedef enum TrueFalse bool;
++Removing the repeated declaration fixed this issue
++Still experiencing the issue with the duplicate symbols 
++tried making the declaration of char MyCity , etc., into a vector of strings instead like we learned in class, but this gave me so many errors elsewhere.
+
+
+
 

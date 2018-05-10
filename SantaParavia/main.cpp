@@ -1,5 +1,9 @@
 #include "paravia.h"
-
+#include <stdio.h>
+#include <string.h>
+#include <time.h>
+#include <stdlib.h>
+#include <curses.h>
 #include <iostream>
 
 int main(void)
@@ -7,7 +11,7 @@ int main(void)
     player MyPlayers[6];
     int NumOfPlayers, i, level;
     char string[255], name[25];
-    boolean MorF;
+    bool MorF;
     /* Initialize the random number generator seed. */
     srand(time(NULL));
     /* Start the game. */
