@@ -1,5 +1,6 @@
 #include <stdlib.h>
 #include <vector>
+
 using namespace std;
 #ifndef __PARAVIA_H_INCLUDED__
 #define __PARAVIA_H_INCLUDED__
@@ -8,34 +9,34 @@ using namespace std;
 enum TrueFalse {True, False};
 //typedef enum TrueFalse bool;
 /* Declare our player definition. */
-struct Player
-{
-    int Cathedral, Clergy, CustomsDuty, CustomsDutyRevenue, DeadSerfs;
-    int Difficulty, FleeingSerfs, GrainDemand, GrainPrice, GrainReserve;
-    int Harvest, IncomeTax, IncomeTaxRevenue, RatsAte;
-    int Justice, JusticeRevenue, Land, Marketplaces, MarketRevenue;
-    int Merchants, MillRevenue, Mills, NewSerfs, Nobles, OldTitle, Palace;
-    int Rats, SalesTax, SalesTaxRevenue, Serfs, SoldierPay, Soldiers, TitleNum;
-    int TransplantedSerfs, Treasury, WhichPlayer, Year, YearOfDeath;
-    char City[15], Name[25], Title[15];
-    float PublicWorks, LandPrice;
-    bool InvadeMe, IsBankrupt, IsDead, IWon, MaleOrFemale, NewTitle;
-} Player;
-typedef struct Player player;
-/* Declare our list of cities. */
-//vector<string> CityList;
 
-char CityList[7][15] = {"Santa Paravia", "Fiumaccio", "Torricella", "Molinetto",
-    "Fontanile", "Romanga", "Monterana"};
-/* Declare our male titles. */
-char MaleTitles[8][15] = {"Sir", "Baron", "Count", "Marquis", "Duke",
-    "Grand Duke", "Prince", "* H.R.H. King"};
-/* Declare our female titles. */
-char FemaleTitles[8][15] = {"Lady", "Baroness", "Countess", "Marquise",
-    "Duchess", "Grand Duchess", "Princess",
-    "* H.R.H. Queen"};
+    struct Player
+    {
+        int Cathedral, Clergy, CustomsDuty, CustomsDutyRevenue, DeadSerfs;
+        int Difficulty, FleeingSerfs, GrainDemand, GrainPrice, GrainReserve;
+        int Harvest, IncomeTax, IncomeTaxRevenue, RatsAte;
+        int Justice, JusticeRevenue, Land, Marketplaces, MarketRevenue;
+        int Merchants, MillRevenue, Mills, NewSerfs, Nobles, OldTitle, Palace;
+        int Rats, SalesTax, SalesTaxRevenue, Serfs, SoldierPay, Soldiers, TitleNum;
+        int TransplantedSerfs, Treasury, WhichPlayer, Year, YearOfDeath;
+        char City[15], Name[25], Title[15];
+        float PublicWorks, LandPrice;
+        bool InvadeMe, IsBankrupt, IsDead, IWon, MaleOrFemale, NewTitle;
+    }; //Player;
+    typedef struct Player player;
+    /* Declare our list of cities. */
+//    char CityList[7][15] = {"Santa Paravia", "Fiumaccio", "Torricella", "Molinetto",
+//        "Fontanile", "Romanga", "Monterana"};
+//    /* Declare our male titles. */
+//    char MaleTitles[8][15] = {"Sir", "Baron", "Count", "Marquis", "Duke",
+//        "Grand Duke", "Prince", "* H.R.H. King"};
+//    /* Declare our female titles. */
+//    char FemaleTitles[8][15] = {"Lady", "Baroness", "Countess", "Marquise",
+//        "Duchess", "Grand Duchess", "Princess",
+//        "* H.R.H. Queen"};
 /* Our prototypes. */
 int main(void);
+void DeclareCities();
 int Random(int);
 void InitializePlayer(player*, int, int, int, char*, bool);
 void AddRevenue(player *);

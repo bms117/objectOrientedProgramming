@@ -35,6 +35,10 @@ Meaning, which this is a guess, that there are duplicate definitions
 +Removing the repeated declaration fixed this issue
 +Still experiencing the issue with the duplicate symbols 
 +tried making the declaration of char MyCity , etc., into a vector of strings instead like we learned in class, but this gave me so many errors elsewhere.
++Got rid of one of the duplicates, player, by removing 'Player' after the struct declaration.
++After moving the declaration of those three other 'symbols' to .cpp and adding it one more time to the main function, the entire code runs together now.
++Tried to start putting items into classes, but started having a lot of trouble getting errors everywhere.
+
 
 
 
